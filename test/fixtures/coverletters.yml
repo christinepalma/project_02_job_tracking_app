@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coverlettername: MyString
+  recipient: MyString
+  company: MyString
+  dateuploaded: MyString
+
+two:
+  coverlettername: MyString
+  recipient: MyString
+  company: MyString
+  dateuploaded: MyString
