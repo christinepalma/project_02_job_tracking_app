@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 
     root "users#index"
-    resources :users
+    resources:users
     resources:resumes
     resources:coverletters
     resources:jobprospects
