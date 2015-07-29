@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JobTrackingApp</title>
+  <title>Job Tracking App</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <%= form_for @user do |a| %>
+  First Name: <%= a.text_field :firstname %>
+  Last Name: <%= a.text_field :lastname %>
+  Username: <%= a.text_field :username %>
+  Email: <%= a.text_field :email %>
+  Password: <%= a.password_field :password %>
+  Password confirmation: <%= a.password_field :password_confirmation %>
+  <%= a.submit "add user"%>
+  <% end %>
+
+
 
 <%= yield %>
 
