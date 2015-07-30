@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.where(email: user_params[:email]).first
+    @user = User.where(email: params[:email]).first
 
-    if @user && @user.authenticate(user_params[:password])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to root_path
     else
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   private
-  def user_params
-    params.require(:user).permit(:email, :password)
-  end
+  # def user_params
+  #   params.require(:user).permit(:email, :password)
+  # end
 end

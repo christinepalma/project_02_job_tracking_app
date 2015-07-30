@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources:jobprospects
     resources:projects
 
-    get "login", to: "sessions#new"
+    get "login", to: "sessions#new", as: :sessions
     post "login", to: "sessions#create"
     get "logout", to: "sessions#destroy"
 

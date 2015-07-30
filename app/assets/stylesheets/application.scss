@@ -22,11 +22,13 @@
    font-size: 12px;
  }
 
+ .navbar-default {
+   background:transparent;
+   border: 0px;
+ }
 
-.navbar-inner {
-    background:transparent;
-    border: 0px;
-}
+
+
 
 .navbar-default .navbar-brand {
     color: #ffffff;
