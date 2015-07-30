@@ -1,2 +1,22 @@
 <h1>Jobprospects#new</h1>
 <p>Find me in app/views/jobprospects/new.html.erb</p>
+
+
+<%= form_for(Jobprospect.new) do |a| %>
+
+Job Status: <%= a.collection_select :status, Jobprospect.jobstatus, :to_s, :to_s, :include_blank => false %>
+
+
+Position Title: <%= a.text_field :positiontitle %>
+Job Description: <%= a.text_field :description %>
+Company Name: <%= a.text_field :companyname %>
+City: <%= a.text_field :city %>
+Contact 1: <%= a.text_field :contact01 %>
+Contact 1 Email: <%= a.text_field :contact01email %>
+Contact 1 Phone #: <%= a.text_field :contact01phone %>
+Contact 2: <%= a.text_field :contact02 %>
+Contact 2 Email: <%= a.text_field :contact02email %>
+Contact 2 Phone #: <%= a.text_field :contact02phone %>
+Comments: <%= a.text_field :comments %>
+<%= a.submit "add jobprospect", {class: "btn btn-primary"}%>
+<% end %>

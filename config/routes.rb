@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
 
 
-    root "users#index"
+    root "jobprospects#index"
     resources:users
     resources:resumes
     resources:coverletters
     resources:jobprospects
-    resources :projects
+    resources:projects
 
     get "login", to: "sessions#new"
     post "login", to: "sessions#create"
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     get "coverletters" =>"coverletters#index"
     get "projects" =>"projects#index"
     get "jobprospects" =>"jobprospects#index"
-
+    get "users" =>"users#index"
 
 
 

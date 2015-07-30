@@ -4,5 +4,15 @@ class Jobprospect < ActiveRecord::Base
   has_one :resume
   has_one :coverletter
 
-  
+
+
+def self.jobstatus
+  jobstatus = ['applied', 'interviewing', 'dead']
+end
+
+def jobstatus
+  #blahblah
+end
+
+
 end
