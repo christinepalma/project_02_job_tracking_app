@@ -5,13 +5,15 @@
 
 
 <% @users.each do |a| %>
+<p>
+  <strong>First Name:</strong> <%= a.firstname %> &nbsp; &nbsp;<strong>Last Name:</strong> <%= a.lastname %>
+<br>
+  <strong>Username:</strong> <%= a.username %> &nbsp; &nbsp;<strong>Email:</strong> <%= a.email %>
+</p>
+<p></p>
+<% end %>
 
-First Name: <%= a.firstname %> Last Name: <%= a.lastname %>
-<p></p>
-Username: <%= a.username %> Email: <%= a.email %>
-<p></p>
 
 <%#= link_to 'Show', user %>
 <%#= link_to 'Edit', edit_user_path(a) %>
 <%#= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>

@@ -4,11 +4,31 @@ class JobprospectsController < ApplicationController
   end
 
   def new
-    
+
   end
 
   def create
-
+    @jobprospect = Jobprospect.new params.require(:jobprospect).permit(
+    :positiontitle,
+    :description,
+    :companyname,
+    :website,
+    :city,
+    :contact01,
+    :contact01email,
+    :contact01phone,
+    :contact02,
+    :contact02email,
+    :contact02phone,
+    :status,
+    :comments
+    )
+    @jobprospect.user = current_user
+    if @jobprospect.save
+      redirect_to "/"
+    else
+      render "new"
+    end
   end
 
   def show
@@ -23,4 +43,7 @@ class JobprospectsController < ApplicationController
 
   def destroy
   end
+
+  private
+
 end
