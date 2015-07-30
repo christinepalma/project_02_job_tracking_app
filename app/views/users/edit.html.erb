@@ -1,2 +1,23 @@
 <h1>Users#edit</h1>
 <p>Find me in app/views/users/edit.html.erb</p>
+
+
+<h1>Edit Your User Account</h1>
+<p>&nbsp;</p>
+
+
+<%= form_for @user do |a| %>
+First Name: <%= a.text_field :firstname %>
+<p></p>
+Last Name: <%= a.text_field :lastname %>
+<p></p>
+Username: <%= a.text_field :username %>
+<p></p>
+Email: <%= a.text_field :email %>
+<p></p>
+Password: <%= a.password_field :password %>
+<p></p>
+Password Confirmation: <%= a.password_field :password_confirmation %>
+<p></p>
+<%= a.submit "edit user", {class: "btn btn-primary"}%>
+<% end %>

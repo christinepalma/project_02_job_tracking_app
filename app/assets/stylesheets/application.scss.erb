@@ -17,17 +17,24 @@
  @import "bootstrap";
 
  body {
-   background-image: url("background.jpg");
+   background-image: url(<%= asset_path "background.jpg" %>);
    color: #ffffff;
    font-size: 12px;
  }
+
+
+.menu_links {
+    color: #ffffff;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+
 
  .navbar-default {
    background:transparent;
    border: 0px;
  }
-
-
 
 
 .navbar-default .navbar-brand {

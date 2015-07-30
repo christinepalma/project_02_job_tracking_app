@@ -1,2 +1,17 @@
 <h1>Jobprospects#index</h1>
 <p>Find me in app/views/jobprospects/index.html.erb</p>
+
+
+
+<% @jobprospects.each do |x| %>
+
+<div>Position Title: <%= link_to "#{x.positiontitle}", jobprospect_path(x) %></div>
+<div>Company Name: <%= x.companyname %></div>
+<div>Status: <%= x.status %></div>
+
+<p></p>
+
+<%#= link_to 'Show', jobprospect %>
+<%#= link_to 'Edit', edit_jobprospect_path(x) %>
+<%#= link_to 'Destroy', jobprospect, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

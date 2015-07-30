@@ -1,2 +1,37 @@
 <h1>Jobprospects#edit</h1>
 <p>Find me in app/views/jobprospects/edit.html.erb</p>
+
+
+
+<h1>Edit This Job Prospect</h1>
+<p>&nbsp;</p>
+
+
+<%= form_for @jobprospect do |a| %>
+
+Job Status: <%= a.collection_select :status, Jobprospect.jobstatus, :to_s, :to_s, :include_blank => false %>
+<p></p>
+Position Title: <%= a.text_field :positiontitle %>
+<p></p>
+Job Description: <%= a.text_field :description %>
+<p></p>
+Company Name: <%= a.text_field :companyname %>
+<p></p>
+City: <%= a.text_field :city %>
+<p></p>
+Contact 1: <%= a.text_field :contact01 %>
+<p></p>
+Contact 1 Email: <%= a.text_field :contact01email %>
+<p></p>
+Contact 1 Phone #: <%= a.text_field :contact01phone %>
+<p></p>
+Contact 2: <%= a.text_field :contact02 %>
+<p></p>
+Contact 2 Email: <%= a.text_field :contact02email %>
+<p></p>
+Contact 2 Phone #: <%= a.text_field :contact02phone %>
+<p></p>
+Comments: <%= a.text_field :comments %>
+<p></p>
+<%= a.submit "add job", {class: "btn btn-primary"}%>
+<% end %>

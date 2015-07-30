@@ -3,12 +3,23 @@
 
 
 
+
+<h1>Create a User Account</h1>
+<p>&nbsp;</p>
+
+
 <%= form_for @user do |a| %>
 First Name: <%= a.text_field :firstname %>
+<p></p>
 Last Name: <%= a.text_field :lastname %>
+<p></p>
 Username: <%= a.text_field :username %>
+<p></p>
 Email: <%= a.text_field :email %>
+<p></p>
 Password: <%= a.password_field :password %>
-Password confirmation: <%= a.password_field :password_confirmation %>
+<p></p>
+Password Confirmation: <%= a.password_field :password_confirmation %>
+<p></p>
 <%= a.submit "add user", {class: "btn btn-primary"}%>
 <% end %>
