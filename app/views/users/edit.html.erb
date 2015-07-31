@@ -1,23 +1,21 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
-
-
-<h1>Edit Your User Account</h1>
+<h1>edit your user account</h1>
 <p>&nbsp;</p>
 
+<h1>hello <%= @user.firstname.downcase %> <%= @user.lastname.downcase %>,</h1>
+
+your username is <%= @user.username %>.
+<p></p>
+<p>&nbsp;</p>
+You can edit your email address here:
+<p></p>
 
 <%= form_for @user do |a| %>
-First Name: <%= a.text_field :firstname %>
-<p></p>
-Last Name: <%= a.text_field :lastname %>
-<p></p>
-Username: <%= a.text_field :username %>
-<p></p>
-Email: <%= a.text_field :email %>
-<p></p>
-Password: <%= a.password_field :password %>
-<p></p>
-Password Confirmation: <%= a.password_field :password_confirmation %>
+<strong>email:</strong> <%= a.text_field :email %>
 <p></p>
 <%= a.submit "edit user", {class: "btn btn-primary"}%>
 <% end %>
+<p></p>
+<p>&nbsp;</p>
+&rarr; <%= link_to "click here to delete your user account.", :user, method: :delete, data: {confirm: "are you sure you want to delete your user account forever?"} %>
+<p></p>
+&rarr; <%= link_to "go back to user dashboard to view all jobs you've applied for!", jobprospects_path %>

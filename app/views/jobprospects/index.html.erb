@@ -1,17 +1,17 @@
 <h1>Jobprospects#index</h1>
 <p>Find me in app/views/jobprospects/index.html.erb</p>
 
-
-<%= @jobprospects.inspect %>
-
 <% @jobprospects.each do |job| %>
   <p>
-    <strong>Position Title: </strong> <%= job.positiontitle %> &nbsp; &nbsp; <%= link_to "#{job.positiontitle}", jobprospect_path(job) %>
+    <strong>Position Title: </strong> <%= job.positiontitle %>
   <br>
-    <strong>Company Name: </strong> <%= job.companyname %> &nbsp; &nbsp; <%= link_to "#{job.companyname}", jobprospect_path(job) %>
+    <strong>Company Name: </strong> <%= job.companyname %>
   <br>
-    <strong>Status: </strong> <%= job.status %> &nbsp; &nbsp; <%= link_to "#{job.status}", jobprospect_path(job) %>
+    <strong>Status: </strong> <%= job.status %> <%= Jobprospect.first.created_at.strftime(" - %m/%d/%Y") %>
+    <li><%= link_to "edit this job", edit_jobprospect_path(job), class:"menu_links" %></li>
+  <p>&nbsp;</p>
   <p></p>
+
 <% end %>
 
 

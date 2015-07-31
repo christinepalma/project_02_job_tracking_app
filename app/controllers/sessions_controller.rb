@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice: "logged in!"
     else
       flash.now.alert = "invalid login credentials"
-      redirect_to new_session_path
+      redirect_to sessions_path
     end
 
   end
