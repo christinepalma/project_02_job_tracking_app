@@ -1,20 +1,5 @@
-<h1>Jobprospects#index</h1>
-<p>Find me in app/views/jobprospects/index.html.erb</p>
-
-<% @jobprospects.each do |job| %>
-  <p>
-    <strong>Position Title: </strong> <%= job.positiontitle %>
-  <br>
-    <strong>Company Name: </strong> <%= job.companyname %>
-  <br>
-    <strong>Status: </strong> <%= job.status %> <%= Jobprospect.first.created_at.strftime(" - %m/%d/%Y") %>
-    <li><%= link_to "edit this job", edit_jobprospect_path(job), class:"menu_links" %></li>
-  <p>&nbsp;</p>
-  <p></p>
-
+<% if  current_user != nil %>
+<%= render "index" %>
+<% else %>
+<%= render "static_pages/welcome" %>
 <% end %>
-
-
-<%#= link_to 'Show', jobprospect %>
-<%#= link_to 'Edit', edit_jobprospect_path(x) %>
-<%#= link_to 'Destroy', jobprospect, method: :delete, data: { confirm: 'Are you sure?' } %>

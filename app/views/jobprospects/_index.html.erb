@@ -1,0 +1,22 @@
+<h1>job prospects</h1>
+<p>&nbsp;</p>
+<% @jobprospects.each do |job| %>
+<div class="joblist">
+  <p>
+    <strong><%= job.positiontitle.upcase %> at <%= job.companyname.upcase %> in <%= job.city.upcase %></strong>
+  <br>
+    <strong>Status: </strong> <%= job.status %> &nbsp; <strong>Created on: </strong> <%= Jobprospect.first.created_at.strftime("%m/%d/%Y") %>
+  <p></p>
+  <strong>Contact 1: </strong> <%= job.contact01 %> &nbsp; <strong>Email: </strong> <%= job.contact01email %> &nbsp; <strong>Phone: </strong> <%= job.contact01phone %>
+<br>
+<strong>Contact 2: </strong> <%= job.contact02 %> &nbsp; <strong>Email: </strong> <%= job.contact02email %> &nbsp; <strong>Phone: </strong> <%= job.contact02phone %>
+  <p></p>
+    <strong>Description: </strong> <%= job.description %>
+  <p></p>
+  <strong>Comments: </strong> <%= job.comments %>
+<p></p>
+  <%= link_to "edit this job", edit_jobprospect_path(job), class:"joblist" %>
+</div>
+  <p>&nbsp;</p>
+  <p></p>
+<% end %>

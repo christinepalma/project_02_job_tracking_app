@@ -18,9 +18,16 @@
 
  body {
    background-image: url(<%= asset_path "background.jpg" %>);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: right top;
+   background-attachment: fixed;
    color: #ffffff;
    font-size: 12px;
  }
+
+
+
 
  a {
      color: #ffffff;
@@ -33,7 +40,11 @@
     text-decoration: underline;
 }
 
-
+.joblist {
+  padding: 10px;
+  background-color: #ffffff;
+  color: #666666;
+}
 
  .navbar-default {
    background:transparent;
@@ -43,6 +54,7 @@
 
 .navbar-default .navbar-brand {
     color: #ffffff;
+    text-decoration: none;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -64,11 +76,3 @@ button, input, optgroup, select, textarea {
     font: inherit;
     margin: 0;
 }
-
-
-
-// input, textarea {
-//     margin: 0em;
-//     font: normal normal normal normal 11px/normal '.HelveticaNeueDeskInterface-Regular';
-//     text-rendering: auto;
-//     color: #000000;

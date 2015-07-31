@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">job track</a>
+    </div>
+
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li><%= link_to "home", root_path, class:"menu_links" %></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">faq</a></li>
+        <li><a href="#">blog</a></li>
+        <li><%= link_to "interview_you", new_user_path(@user), class:"menu_links" %></li>
+        <li><a href="#">resources</a></li>
+        <li><a href="#">contact</a></li>
+        <li><%= link_to "create a new user account", new_user_path(@user) %></li>
+      </ul>
+
+      <%= form_tag sessions_path, class:"navbar-form navbar-right", role:"form" do %>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <%= text_field_tag :email, params[:email], placeholder:"email", class:"form-control" %>
+        </div>
+
+      <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <%= password_field_tag :password, nil, placeholder:"password", class:"form-control" %>
+      </div>
+
+      <%= submit_tag "Log in", class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</nav>

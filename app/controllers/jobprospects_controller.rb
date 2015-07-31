@@ -2,7 +2,9 @@ class JobprospectsController < ApplicationController
   before_action :get_user
 
   def index
-    @jobprospects = Jobprospect.all
+    if current_user != nil
+      @jobprospects = current_user.jobprospects.all
+    end
   end
 
   def new

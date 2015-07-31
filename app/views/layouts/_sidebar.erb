@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <h1>user dashboard</h1>
+
+    <p>&nbsp;</p>
+    <% if current_user %>
+    <p><%= current_user.email %><br>
+    is logged in
+    </p>
+    <p>&nbsp;</p>
+    <% end %>
+    <%  if current_user %>
+    <p><strong>manage my account</strong></p>
+    <ul>
+        <li><%= link_to("edit user account", edit_user_path(current_user), class:"menu_links")%></li>
+        <% end %>
+</ul>
+
+    <p>&nbsp;</p>
+    <p><strong>manage jobs tracked</strong></p>
+    <ul>
+      <li><%= link_to "view all jobs", jobprospects_path(@jobprospect), class:"menu_links" %></li>
+      <li><%= link_to "add a job", new_jobprospect_path(@jobprospect), class:"menu_links" %></li>
+    </ul>
+
+    <p>&nbsp;</p>
+    <p><strong>manage resumes</strong></p>
+    <ul>
+      <li>view all resumes</li>
+      <li>add a resume version</li>
+      <li>delete resume</li>
+    </ul>
+
+    <p>&nbsp;</p>
+    <p><strong>manage coverletters and docs</strong></p>
+    <ul>
+      <li>view all coverletters</li>
+      <li>add coverletter</li>
+      <li>delete coverletter</li>
+    </ul>
+  </div>
+
+  <div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
